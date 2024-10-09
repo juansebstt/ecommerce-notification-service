@@ -1,0 +1,28 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_notification_db
+    username: yourUsername
+    password: yourPassword
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  application:
+    name: ecommerce-notification-service
+
+notification:
+  email:
+    provider: SendGrid
+    api-key: yourSendGridApiKey
+
+  sms:
+    provider: Twilio
+    account-sid: yourTwilioAccountSid
+    auth-token: yourTwilioAuthToken
+    from-number: yourTwilioPhoneNumber
